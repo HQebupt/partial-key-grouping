@@ -12,6 +12,7 @@ Partial Key Grouping is a load balancing strategy for distributed stream process
 
 ## 数据倾斜表现
 - 在UI界面可以发现某个**task**处理的数据量远远大于其它的**task**。影响了Storm的处理速度。
+- 这个task的任务处理延时比其它的task处理延时高。
 
 ## 解决办法
 **Partial Key Grouping** ： 类似**Fields grouping** , 同时具有 load balanced between two downstream bolts，有效的解决了输入数据的倾斜问题.   (这篇[paper](https://melmeric.files.wordpress.com/2014/11/the-power-of-both-choices-practical-load-balancing-for-distributed-stream-processing-engines.pdf) 解释了它的工作原理和优点。)
